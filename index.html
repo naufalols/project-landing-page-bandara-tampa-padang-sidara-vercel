@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UPBU Tampa Padang Mamuju — Landing Page</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #072443;
+            --gold: #d4a31a;
+            --muted: #6c757d;
+        }
+
+        .bg-primary {
+            background-color: var(--navy) !important;
+        }
+
+        .btn-primary {
+            background-color: var(--navy);
+            border-color: var(--navy);
+        }
+
+        .btn-outline-primary {
+            color: var(--navy);
+            border-color: var(--navy);
+        }
+
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            color: #0b2b3a;
+            background-color: #f8f9fb;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: #fff;
+        }
+
+        .navbar .navbar-brand {
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .navbar .nav-link {
+            color: var(--navy);
+        }
+
+        .navbar .nav-link:hover {
+            color: var(--gold);
+        }
+
+        .badge-gold {
+            background: var(--gold);
+            color: #09202b;
+            font-weight: 700;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            background-image:
+                linear-gradient(180deg, rgba(7, 36, 67, 0.6), rgba(7, 36, 67, 0.35)),
+                url('background_hero.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero .lead {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .hero .btn-cta {
+            background: var(--gold);
+            color: #08202b;
+            border: none;
+            font-weight: 600;
+        }
+
+        .hero .btn-ghost {
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        /* Fast access */
+        .pillar-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--gold);
+        }
+
+        .card.pillar {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(2, 20, 40, 0.06);
+        }
+
+        /* Facility table */
+        .data-table th {
+            width: 40%;
+            background: rgba(7, 36, 67, 0.05);
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+        }
+
+        .data-table td {
+            font-weight: 600;
+        }
+
+        /* Organization */
+        .org-card {
+            border: 1px solid rgba(7, 36, 67, 0.06);
+            border-radius: 10px;
+        }
+
+        footer {
+            background: #081627;
+            color: rgba(255, 255, 255, 0.9);
+            padding: 2.25rem 0;
+            margin-top: 2.5rem;
+        }
+
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .social a {
+            color: #fff;
+            margin-right: .5rem;
+            font-size: 1.05rem;
+        }
+
+        @media (max-width: 767px) {
+            .hero {
+                padding: 3.5rem 0;
+                min-height: 72vh;
+            }
+
+            .navbar .form-inline {
+                width: 100%;
+                margin-top: .5rem;
+            }
+
+            .navbar-brand img {
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar (Sticky Top) -->
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="logo.png" alt="UPBU Tampa Padang Mamuju Logo" height="60" class="me-2 rounded">
+                <!-- <span class="fs-6 fw-bold">UPBU Tampa Padang Mamuju</span> -->
+            </a>
+
+            <button class="navbar-toggler border-0" style="color: #072443;" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link px-3" href="#hero">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#data-fasilitas">Detail</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#tentang">Tentang Kami</a></li>
+                    <!-- <li class="nav-item">
+                        <form class="d-flex ms-lg-3" role="search"
+                            onsubmit="event.preventDefault(); document.getElementById('searchModal').scrollIntoView({behavior:'smooth'})">
+                            <div class="input-group">
+                                <input class="form-control form-control-sm" type="search" placeholder="Pencarian"
+                                    aria-label="Search">
+                                <button class="btn btn-sm btn-light" type="submit"><i class="bi bi-search"></i></button>
+                            </div>
+                        </form>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (Full Height) -->
+    <header id="hero" class="hero"
+        style="background-image: linear-gradient(180deg, rgba(7, 36, 67, 0.6), rgba(7, 36, 67, 0.35)), url('background_hero.jpg'); background-size: cover; background-position: center;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 text-white">
+                    <h1 class="display-5 fw-bold">Menuju Layanan Kebandarudaraan yang Efisien, Transparan, dan Berbasis
+                        Digital</h1>
+                    <p class="lead mt-3">
+                        Kantor UPBU Kelas II Tampa Padang Mamuju: Melaksanakan penyelenggaraan, pengoperasian, dan
+                        pengendalian kegiatan kebandarudaraan untuk menjamin keselamatan, keamanan, dan kelancaran
+                        transportasi udara di wilayah kerja Bandar Udara Tampa Padang, Provinsi Sulawesi Barat.
+                    </p>
+
+                    <div class="mt-4 d-flex gap-2">
+                        <a href="#fast-access" class="btn btn-cta btn-lg">Akses Data Operasi</a>
+                        <a href="#tentang" class="btn btn-ghost btn-lg"><i class="bi bi-info-circle me-2"></i> Tentang
+                            UPBU</a>
+                    </div>
+
+                    <ul class="list-inline mt-4 small text-white-50">
+                        <li class="list-inline-item me-3"><i class="bi bi-check-circle-fill text-warning"></i> Data
+                            Terstruktur</li>
+                        <li class="list-inline-item me-3"><i class="bi bi-check-circle-fill text-warning"></i>
+                            Transparansi Operasional</li>
+                        <li class="list-inline-item"><i class="bi bi-check-circle-fill text-warning"></i> Fokus
+                            Keselamatan</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-5 d-none d-lg-block">
+                    <div class="card p-3 org-card bg-white bg-opacity-10 border-0" style="backdrop-filter: blur(6px);">
+                        <div class="card-body">
+                            <h6 class="text-white">Akses Cepat</h6>
+                            <p class="text-white-50 small">Kumpulan ringkasan data operasional, regulasi, personel, dan
+                                fasilitas.</p>
+                            <div class="row g-3 mt-2">
+                                <div class="col-4 text-center">
+                                    <div class="pillar-icon mx-auto"><i class="bi bi-file-earmark-text"></i></div>
+                                    <div class="small text-white-50 mt-2">Regulasi</div>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <div class="pillar-icon mx-auto"><i class="bi bi-building"></i></div>
+                                    <div class="small text-white-50 mt-2">Fasilitas</div>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <div class="pillar-icon mx-auto"><i class="bi bi-people"></i></div>
+                                    <div class="small text-white-50 mt-2">Personel</div>
+                                </div>
+                            </div>
+
+                            <div class="text-end mt-3">
+                                <a href="#data-fasilitas" class="btn btn-sm btn-outline-light">Lihat Selengkapnya</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- FAST ACCESS SECTION (4 Pillars) -->
+    <section id="fast-access" class="py-5">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="h4">Akses Cepat — Data Utama</h2>
+                <p class="text-muted small">Empat pilar data yang dapat diakses untuk mendukung monitoring dan
+                    perencanaan operasional</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-3 col-6">
+                    <div class="card pillar h-100 p-3">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="bg-primary text-white rounded-3 p-2"
+                                style="width:64px;height:64px;display:flex;align-items:center;justify-content:center;">
+                                <i class="bi bi-file-earmark-text-fill fs-4"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Regulasi</h6>
+                                <p class="small text-muted mb-0">Kumpulan peraturan, keputusan, dan pedoman operasional.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mt-3 text-end">
+                            <a href="#tentang" class="small text-decoration-none">Lihat regulasi <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-6">
+                    <div class="card pillar h-100 p-3">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="bg-primary text-white rounded-3 p-2"
+                                style="width:64px;height:64px;display:flex;align-items:center;justify-content:center;">
+                                <i class="bi bi-building fs-4"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Data Fasilitas</h6>
+                                <p class="small text-muted mb-0">Informasi Runway, Apron, Terminal, dan layanan
+                                    pendukung.</p>
+                            </div>
+                        </div>
+                        <div class="mt-3 text-end">
+                            <a href="#data-fasilitas" class="small text-decoration-none">Lihat fasilitas <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-6">
+                    <div class="card pillar h-100 p-3">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="bg-primary text-white rounded-3 p-2"
+                                style="width:64px;height:64px;display:flex;align-items:center;justify-content:center;">
+                                <i class="bi bi-shield-lock-fill fs-4"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Data Dokumen Operasi Bandara</h6>
+                                <p class="small text-muted mb-0">Dokumen angkutan udara, keselamatan, dan keamanan
+                                    penerbangan.</p>
+                            </div>
+                        </div>
+                        <div class="mt-3 text-end">
+                            <a href="#tentang" class="small text-decoration-none">Akses dokumen <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-6">
+                    <div class="card pillar h-100 p-3">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="bg-primary text-white rounded-3 p-2"
+                                style="width:64px;height:64px;display:flex;align-items:center;justify-content:center;">
+                                <i class="bi bi-people-fill fs-4"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Data Personel Penerbangan</h6>
+                                <p class="small text-muted mb-0">Informasi ASN, pegawai kontrak, dan struktur organisasi
+                                    inti.</p>
+                            </div>
+                        </div>
+                        <div class="mt-3 text-end">
+                            <a href="#organisasi" class="small text-decoration-none">Lihat personel <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FACILITY DATA SECTION -->
+    <section id="data-fasilitas" class="py-5 bg-white">
+        <div class="container">
+            <div class="mb-4 text-center">
+                <h3 class="h5">Data Fasilitas Bandar Udara Tampa Padang</h3>
+                <p class="text-muted small mb-0">Ringkasan teknis fasilitas dan kapasitas operasional</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-7">
+                    <div class="card border-0 shadow-sm p-3">
+                        <div class="card-body">
+                            <table class="table data-table mb-0">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" class="py-3"><i class="bi bi-airplane me-2"
+                                                style="color:var(--navy)"></i>Kode IATA</th>
+                                        <td class="py-3">MJU</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="py-3"><i class="bi bi-qr-code me-2"
+                                                style="color:var(--navy)"></i>Kode ICAO</th>
+                                        <td class="py-3">WAFJ</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="py-3"><i class="bi bi-clock me-2"
+                                                style="color:var(--navy)"></i>Jam Operasi</th>
+                                        <td class="py-3">22.25 - 09.00 (UTC +8 HR)</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="py-3"><i class="bi bi-map me-2"
+                                                style="color:var(--navy)"></i>Runway</th>
+                                        <td class="py-3">2.500 &times; 45 m — 44 F/C/X/T</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="py-3"><i class="bi bi-people-fill me-2"
+                                                style="color:var(--navy)"></i>Critical Aircraft</th>
+                                        <td class="py-3">B737-800 / A320 (TYPE A/C 4C)</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="py-3"><i class="bi bi-fire me-2"
+                                                style="color:var(--navy)"></i>ARFF Category</th>
+                                        <td class="py-3">6 — Kebutuhan air minimum 7.900 Lt.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="py-3"><i class="bi bi-building me-2"
+                                                style="color:var(--navy)"></i>Terminal</th>
+                                        <td class="py-3">5.087 m² — Kapasitas 302.308 Pax/Tahun</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="mt-3 small text-muted">
+                                Catatan: Angka dan kategori mengikuti data standard operasional bandara untuk tujuan
+                                perencanaan dan informasi publik.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="card border-0 shadow-sm p-3">
+                        <div class="card-body">
+                            <h6 class="mb-3">Fasilitas Tambahan</h6>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Apron untuk pesawat komersial dan GA</li>
+                                <li class="list-group-item">Layanan navigasi udara dasar dan komunikasi</li>
+                                <li class="list-group-item">Area penumpang, layanan darurat, dan parkir</li>
+                                <li class="list-group-item">Sarana keselamatan & keamanan sesuai ARFF kategori</li>
+                            </ul>
+
+                            <div class="mt-3">
+                                <a href="#fast-access" class="btn btn-outline-primary btn-sm">Unduh Data Lengkap</a>
+                                <a href="#contact" class="btn btn-primary btn-sm ms-2">Hubungi Kami</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TENTANG / ORGANISASI & CONTACT SECTION -->
+    <section id="tentang" class="py-5">
+        <div class="container">
+            <div class="row g-4 align-items-start">
+                <div class="col-lg-7">
+                    <h5>Profil Organisasi</h5>
+                    <p class="text-muted">
+                        Bandar Udara Tampa Padang Mamuju — Kode ICAO WAFJ — terletak di Kecamatan Kalukku, Kabupaten
+                        Mamuju, Provinsi Sulawesi Barat.
+                        Berdiri sejak tahun 1978 dan terus mengalami peningkatan pelayanan baik dari sisi Sumber Daya
+                        Manusia maupun fasilitas prasarana penunjang operasional bandara.
+                    </p>
+
+                    <p class="text-muted">
+                        Sebagai pintu gerbang utama transportasi udara di Provinsi Sulawesi Barat, bandara mendukung
+                        mobilitas masyarakat, kegiatan pemerintahan, perdagangan serta distribusi logistik dan barang.
+                        Selain itu, bandara berfungsi strategis dalam mendukung tanggap darurat bencana.
+                    </p>
+
+                    <p class="text-muted">
+                        Sesuai Peraturan Menteri Perhubungan Republik Indonesia Nomor PM 118 Tahun 2021 tentang
+                        Perubahan Kelima atas Peraturan Menteri Perhubungan Nomor PM 40 Tahun 2014 tentang Organisasi
+                        dan Tata Kerja Kantor Unit Penyelenggara Bandar Udara, Bandar Udara Tampa Padang ditetapkan
+                        sebagai Unit Penyelenggara Bandar Udara Kelas II wilayah Sulawesi Barat, dengan spesifikasi
+                        sebagai berikut.
+                    </p>
+                </div>
+
+                <div class="col-lg-5" id="organisasi">
+                    <h5>Struktur Organisasi</h5>
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="p-3 org-card">
+                                <div class="d-flex align-items-start gap-2">
+                                    <div class="avatar bg-primary text-white rounded-circle p-2"><i
+                                            class="bi bi-person-badge"></i></div>
+                                    <div>
+                                        <div class="small text-muted">Kepala Kantor</div>
+                                        <div class="fw-bold">Indra Triyantono</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="p-3 org-card">
+                                <div class="d-flex align-items-start gap-2">
+                                    <div class="avatar bg-primary text-white rounded-circle p-2"><i
+                                            class="bi bi-person-badge"></i></div>
+                                    <div>
+                                        <div class="small text-muted">Kepala Seksi Pelayanan & Kerjasama</div>
+                                        <div class="fw-bold">Rizki Wahyudianto</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="p-3 org-card">
+                                <div class="d-flex align-items-start gap-2">
+                                    <div class="avatar bg-primary text-white rounded-circle p-2"><i
+                                            class="bi bi-person-badge"></i></i></div>
+                                    <div>
+                                        <div class="small text-muted">Kepala Subbagian Tata Usaha</div>
+                                        <div class="fw-bold">Agung</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="p-3 org-card">
+                                <div class="d-flex align-items-start gap-2">
+                                    <div class="avatar bg-primary text-white rounded-circle p-2"><i
+                                            class="bi bi-person-badge"></i></div>
+                                    <div>
+                                        <div class="small text-muted">Kepala Seksi Teknik Operasi & Keamanan</div>
+                                        <div class="fw-bold">Dody Sumarlan</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <a href="mailto:bandaratampapadangmamuju@gmail.com" class="btn btn-outline-primary btn-sm"><i
+                                class="bi bi-envelope"></i> Email</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="visi-misi" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h3 class="h5">Visi &amp; Misi</h3>
+                <p class="text-muted small mb-0">Landasan arah pengembangan layanan kebandarudaraan</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-12">
+                    <div class="card border-0 shadow-sm p-3 h-100">
+                        <div class="card-body">
+                            <h6 class="fw-bold">Visi</h6>
+                            <blockquote class="blockquote mb-3">
+                                <p class="mb-0">“Terwujudnya Penyelenggaraan Jasa Kebandarudaraan Sesuai Dengan Standar
+                                    Keselamatan, Keamanan dan Pelayanan Penerbangan”</p>
+                            </blockquote>
+
+                            <h6 class="fw-bold mt-3"><small>Penjelasan Visi (Garis Besar)</small></h6>
+                            <ol class="small text-muted mb-0">
+                                <li>Mewujudkan keselamatan dan keamanan penerbangan di bandar udara;</li>
+                                <li>Meningkatkan sarana dan prasarana bandar udara yang andal dan optimal;</li>
+                                <li>Mewujudkan pelayanan jasa kebandarudaraan yang berkualitas, dengan didukung oleh SDM
+                                    yang profesional;</li>
+                                <li>Meningkatkan kinerja administrasi dan keuangan yang terukur dan akuntabel.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="card border-0 shadow-sm p-3 h-100">
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <h6 class="fw-bold">Tujuan</h6>
+                                    <ol class="small text-muted mb-0">
+                                        <li>Meningkatkan keselamatan dan keamanan penerbangan;</li>
+                                        <li>Meningkatkan kualitas pelayanan jasa kebandarudaraan sesuai standar
+                                            pelayanan;</li>
+                                        <li>Meningkatkan produktivitas bandar udara melalui peningkatan kualitas dan
+                                            kuantitas SDM;</li>
+                                        <li>Menciptakan pengelolaan administrasi dan keuangan bandar udara yang efektif
+                                            dan efisien.</li>
+                                    </ol>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <h6 class="fw-bold">Sasaran / Indikator Keberhasilan</h6>
+                                    <ol class="small text-muted mb-0">
+                                        <li>Menurunnya angka kecelakaan transportasi udara;</li>
+                                        <li>Menurunnya jumlah gangguan keamanan dalam penyelenggaraan transportasi
+                                            udara;</li>
+                                        <li>Meningkatnya kinerja pelayanan sarana dan prasarana bandar udara;</li>
+                                        <li>Meningkatnya kapasitas sarana dan prasarana bandar udara;</li>
+                                        <li>Terpenuhinya SDM Bandar Udara dalam jumlah dan kompetensi sesuai dengan
+                                            kebutuhan;</li>
+                                        <li>Meningkatnya kinerja Bandar Udara dalam mewujudkan good governance;</li>
+                                        <li>Terpenuhinya layanan transportasi udara perintis.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT / CTA -->
+    <section id="contact" class="py-5 bg-white">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6">
+                    <h5>Lokasi di Peta</h5>
+                    <p class="text-muted small">Klik untuk membuka peta atau lihat pratinjau di bawah.</p>
+
+                    <div class="ratio ratio-16x9 mb-2" style="min-height:200px;">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.73641456158!2d119.0146139758359!3d-2.5919677384489845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d92dd060864e6bf%3A0x64e3570992b49a4e!2sBandar%20Udara%20Tampa%20Padang!5e0!3m2!1sen!2sid!4v1762615045903!5m2!1sen!2sid"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+
+                    <a href="https://maps.app.goo.gl/vgpnQg19zhia3GXJA" target="_blank" rel="noopener"
+                        class="btn btn-outline-primary btn-sm">
+                        Buka di Google Maps
+                    </a>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm p-3">
+                        <div class="card-body">
+                            <div class="mt-3">
+                                <a href="kk-transportation.png" target="_blank" rel="noopener">
+                                    <img src="kk-transportation.png" alt="KK Transportation" class="img-fluid rounded">
+                                </a>
+                                <!-- <div class="small text-muted mt-2">Klik gambar untuk melihat ukuran penuh.</div> -->
+                            </div>
+                            <h6 class="mb-2">Informasi Kontak</h6>
+                            <p class="small mb-1">
+                                <i class="bi bi-envelope-fill me-2"></i>
+                                <strong>Email:</strong>
+                                <a href="mailto:bandaratampapadangmamuju@gmail.com"
+                                    class="text-decoration-none">bandaratampapadangmamuju@gmail.com</a>
+                            </p>
+                            <p class="small mb-1">
+                                <i class="bi bi-geo-alt-fill me-2"></i>
+                                <strong>Alamat:</strong>
+                                Jl. Poros Mamuju Kalukku KM. 31, Kel. Sinyonyoi Selatan, Kec. Kalukku, Kab. Mamuju,
+                                Sulawesi Barat
+                            </p>
+                            <p class="small mb-0">
+                                <i class="bi bi-instagram me-2"></i>
+                                <strong>Media Sosial:</strong>
+                                <a href="https://instagram.com/bandara_mamuju" target="_blank" rel="noopener"
+                                    class="text-decoration-none">@bandara_mamuju</a>
+
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="fw-bold">UPBU Tampa Padang Mamuju</div>
+                    <div class="small text-white-50">Mengutamakan keselamatan, layanan, dan transparansi data</div>
+                </div>
+
+                <div class="col-md-6 text-md-end mt-3 mt-md-0">
+                    <div class="social mb-2">
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="bi bi-music-note-beamed"></i></a>
+                        <a href="mailto:bandaratampapadangmamuju@gmail.com" aria-label="Email"><i
+                                class="bi bi-envelope"></i></a>
+                    </div>
+                    <div class="small">© <span id="year"></span> UPBU Tampa Padang Mamuju</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    history.replaceState(null, '', this.getAttribute('href'));
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
