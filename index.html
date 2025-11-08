@@ -10,12 +10,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- CryptoJS for hashing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
 
     <style>
         :root {
             --navy: #072443;
             --gold: #d4a31a;
             --muted: #6c757d;
+        }
+
+        .modal-backdrop {
+            opacity: 0.2 !important;
         }
 
         .bg-primary {
@@ -171,7 +177,7 @@
     <!-- Navbar (Sticky Top) -->
     <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
+            <a class="navbar-brand d-flex align-items-center" data-link-key="hero" href="#">
                 <img src="logo.png" alt="UPBU Tampa Padang Mamuju Logo" height="60" class="me-2 rounded">
                 <!-- <span class="fs-6 fw-bold">UPBU Tampa Padang Mamuju</span> -->
             </a>
@@ -183,9 +189,9 @@
 
             <div class="collapse navbar-collapse" id="navMenu">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
-                    <li class="nav-item"><a class="nav-link px-3" href="#hero">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#data-fasilitas">Detail</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#tentang">Tentang Kami</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" data-link-key="hero">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" data-link-key="data-fasilitas">Detail</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" data-link-key="tentang">Tentang Kami</a></li>
                     <!-- <li class="nav-item">
                         <form class="d-flex ms-lg-3" role="search"
                             onsubmit="event.preventDefault(); document.getElementById('searchModal').scrollIntoView({behavior:'smooth'})">
@@ -216,8 +222,9 @@
                     </p>
 
                     <div class="mt-4 d-flex gap-2">
-                        <a href="#fast-access" class="btn btn-cta btn-lg">Akses Data Operasi</a>
-                        <a href="#tentang" class="btn btn-ghost btn-lg"><i class="bi bi-info-circle me-2"></i> Tentang
+                        <a data-link-key="fast-access" class="btn btn-cta btn-lg">Akses Data Operasi</a>
+                        <a data-link-key="tentang" class="btn btn-ghost btn-lg"><i class="bi bi-info-circle me-2"></i>
+                            Tentang
                             UPBU</a>
                     </div>
 
@@ -253,7 +260,8 @@
                             </div>
 
                             <div class="text-end mt-3">
-                                <a href="#data-fasilitas" class="btn btn-sm btn-outline-light">Lihat Selengkapnya</a>
+                                <a data-link-key="lihat-selengkapnya" class="btn btn-sm btn-outline-light">Lihat
+                                    Selengkapnya</a>
                             </div>
                         </div>
                     </div>
@@ -287,7 +295,7 @@
                             </div>
                         </div>
                         <div class="mt-3 text-end">
-                            <a href="#tentang" class="small text-decoration-none">Lihat regulasi <i
+                            <a data-link-key="lihat-regulasi" class="small text-decoration-none">Lihat regulasi <i
                                     class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
@@ -307,7 +315,7 @@
                             </div>
                         </div>
                         <div class="mt-3 text-end">
-                            <a href="#data-fasilitas" class="small text-decoration-none">Lihat fasilitas <i
+                            <a data-link-key="lihat-fasilitas" class="small text-decoration-none">Lihat fasilitas <i
                                     class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
@@ -327,7 +335,7 @@
                             </div>
                         </div>
                         <div class="mt-3 text-end">
-                            <a href="#tentang" class="small text-decoration-none">Akses dokumen <i
+                            <a data-link-key="akses-dokumen" class="small text-decoration-none">Akses dokumen <i
                                     class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
@@ -347,7 +355,7 @@
                             </div>
                         </div>
                         <div class="mt-3 text-end">
-                            <a href="#organisasi" class="small text-decoration-none">Lihat personel <i
+                            <a data-link-key="lihat-personel" class="small text-decoration-none">Lihat personel <i
                                     class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
@@ -427,8 +435,9 @@
                             </ul>
 
                             <div class="mt-3">
-                                <a href="#fast-access" class="btn btn-outline-primary btn-sm">Unduh Data Lengkap</a>
-                                <a href="#contact" class="btn btn-primary btn-sm ms-2">Hubungi Kami</a>
+                                <a data-link-key="unduh-data" class="btn btn-outline-primary btn-sm">Unduh Data
+                                    Lengkap</a>
+                                <a data-link-key="contact" class="btn btn-primary btn-sm ms-2">Hubungi Kami</a>
                             </div>
                         </div>
                     </div>
@@ -612,8 +621,7 @@
                             allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
 
-                    <a href="https://maps.app.goo.gl/vgpnQg19zhia3GXJA" target="_blank" rel="noopener"
-                        class="btn btn-outline-primary btn-sm">
+                    <a data-link-key="maps-app" class="btn btn-outline-primary btn-sm">
                         Buka di Google Maps
                     </a>
                 </div>
@@ -622,7 +630,7 @@
                     <div class="card border-0 shadow-sm p-3">
                         <div class="card-body">
                             <div class="mt-3">
-                                <a href="kk-transportation.png" target="_blank" rel="noopener">
+                                <a data-link-key="kk-transportation" class="">
                                     <img src="kk-transportation.png" alt="KK Transportation" class="img-fluid rounded">
                                 </a>
                                 <!-- <div class="small text-muted mt-2">Klik gambar untuk melihat ukuran penuh.</div> -->
@@ -631,7 +639,7 @@
                             <p class="small mb-1">
                                 <i class="bi bi-envelope-fill me-2"></i>
                                 <strong>Email:</strong>
-                                <a href="mailto:bandaratampapadangmamuju@gmail.com"
+                                <a data-link-key="email"
                                     class="text-decoration-none">bandaratampapadangmamuju@gmail.com</a>
                             </p>
                             <p class="small mb-1">
@@ -643,8 +651,7 @@
                             <p class="small mb-0">
                                 <i class="bi bi-instagram me-2"></i>
                                 <strong>Media Sosial:</strong>
-                                <a href="https://instagram.com/bandara_mamuju" target="_blank" rel="noopener"
-                                    class="text-decoration-none">@bandara_mamuju</a>
+                                <a data-link-key="instagram" class="text-decoration-none">@bandara_mamuju</a>
 
                             </p>
 
@@ -666,10 +673,9 @@
 
                 <div class="col-md-6 text-md-end mt-3 mt-md-0">
                     <div class="social mb-2">
-                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="#" aria-label="TikTok"><i class="bi bi-music-note-beamed"></i></a>
-                        <a href="mailto:bandaratampapadangmamuju@gmail.com" aria-label="Email"><i
-                                class="bi bi-envelope"></i></a>
+                        <a data-link-key="instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a data-link-key="tiktok" aria-label="TikTok"><i class="bi bi-music-note-beamed"></i></a>
+                        <a data-link-key="email" aria-label="Email"><i class="bi bi-envelope"></i></a>
                     </div>
                     <div class="small">© <span id="year"></span> UPBU Tampa Padang Mamuju</div>
                 </div>
@@ -679,6 +685,97 @@
 
     <!-- Bootstrap JS bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="list-link.js"></script>
+    <!-- Token access modal + logic -->
+    <script>
+        // expected token value
+        const ACCESS_TOKEN_KEY = 'bandara-mju-token-accepted';
+        const EXPECTED_HASH = 'ac22821af40d3ecc19d9948dd02d97e7';
+
+        // create modal element markup
+        const modalHtml = `
+                <div class="modal fade" id="tokenModal" tabindex="-1" aria-labelledby="tokenModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="tokenModalLabel">Masukkan Token Akses</h5>
+                            </div>
+                            <div class="modal-body">
+                                <p>Masukkan token untuk mengakses halaman ini.</p>
+                                <div class="mb-3">
+                                    <label for="tokenInput" class="form-label">Token</label>
+                                    <input type="password" class="form-control" id="tokenInput" placeholder="Masukkan token">
+                                    <div id="tokenHelp" class="form-text text-danger small" style="display:none;">Token salah. Coba lagi.</div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="tokenSubmit" class="btn btn-primary">Masuk</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+
+        document.body.insertAdjacentHTML('beforeend', modalHtml);
+
+        // helper to show modal
+        const tokenModalEl = document.getElementById('tokenModal');
+        const tokenModal = new bootstrap.Modal(tokenModalEl, { backdrop: 'static', keyboard: false });
+
+        function isTokenAccepted() {
+            try {
+                return localStorage.getItem(ACCESS_TOKEN_KEY) === '1';
+            } catch (e) {
+                return false;
+            }
+        }
+
+        function acceptToken() {
+            try { localStorage.setItem(ACCESS_TOKEN_KEY, '1'); } catch (e) { /* ignore */ }
+        }
+
+        function showTokenModal() {
+            tokenModal.show();
+            // focus input
+            setTimeout(() => document.getElementById('tokenInput').focus(), 200);
+        }
+
+        // validation logic
+        document.addEventListener('DOMContentLoaded', function () {
+            const tokenInput = document.getElementById('tokenInput');
+            const tokenSubmit = document.getElementById('tokenSubmit');
+            const tokenHelp = document.getElementById('tokenHelp');
+
+            function trySubmit() {
+                const rawToken = (tokenInput.value || '').trim();
+
+                // --- LOGIKA HASHING BARU ---
+                // 1. Hash input pengguna menggunakan MD5
+                const inputHash = CryptoJS.MD5(rawToken).toString();
+
+                // 2. Bandingkan HASH input dengan HASH yang diharapkan
+                if (inputHash === EXPECTED_HASH) {
+                    tokenHelp.style.display = 'none';
+                    acceptToken();
+                    tokenModal.hide();
+                } else {
+                    tokenHelp.style.display = 'block';
+                    tokenInput.classList.add('is-invalid');
+                    tokenInput.focus();
+                }
+            }
+
+            tokenSubmit.addEventListener('click', trySubmit);
+            tokenInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') trySubmit();
+            });
+
+            // on first load, show modal if token not yet accepted
+            if (!isTokenAccepted()) {
+                showTokenModal();
+            }
+        });
+
+    </script>
     <script>
         // set current year
         document.getElementById('year').textContent = new Date().getFullYear();
