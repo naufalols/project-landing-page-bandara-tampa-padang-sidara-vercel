@@ -22,10 +22,10 @@ const LINKS = {
 
     // convenience aliases used in the page
     'lihat-selengkapnya': '#data-fasilitas',
-    'lihat-regulasi': '#tentang',
-    'lihat-fasilitas': '#data-fasilitas',
-    'akses-dokumen': '#tentang',
-    'lihat-personel': '#organisasi',
+    'lihat-regulasi': 'https://drive.google.com/drive/folders/1xxyggkg6fCsLahSNOLtIaLpKLDNz33tM?usp=sharing',
+    'lihat-fasilitas': 'https://docs.google.com/document/d/1vwXkvgI2JGG09S7HnyTXm8Npw33_6wWD/edit?usp=sharing&ouid=115469356268248613306&rtpof=true&sd=true',
+    'akses-dokumen': 'https://drive.google.com/drive/folders/1gQ8SIqw2sclZkVlvm-9FgV0-Sh_m58Ac?usp=sharing',
+    'lihat-personel': 'https://drive.google.com/drive/folders/1Dh24Z_jEoL2EGgmz4CxQCUhRldM77ybi?usp=sharing',
     'unduh-data': '#fast-access'
 };
 
@@ -69,4 +69,5 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', applyLinks);
 } else {
     applyLinks();
+
 }
